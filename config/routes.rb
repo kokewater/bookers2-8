@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'relationships/create'
   get 'relationships/destroy'
-  devise_for :users #順番を上にした
+  
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+  }
   
   root 'homes#top'
   get 'home/about' => 'homes#about', as: 'about'

@@ -1,6 +1,6 @@
 class ContactMailer < ApplicationMailer
-  def welcome#メソッドに対して引数を設定
+  def welcome_email(user)#メソッドに対して引数を設定
     @user = user #ユーザー情報
-    mail to: @user.email, subject: 'ククク、私のサイトへようこそ！'
+    mail(:subject => "登録完了のお知らせ", to: user.email)
   end
 end

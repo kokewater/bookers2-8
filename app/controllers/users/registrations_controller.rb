@@ -12,8 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    binding.pry
-    ContactMailer.welcome(current_user).deliver_now
+    ContactMailer.welcome_email(current_user).deliver_now
   end
 
   # GET /resource/edit
