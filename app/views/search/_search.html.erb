@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="search-bar col-xs-7 col-xs-offset-5 ">
+      <%= form_with(url: search_path, method: :get, local: true) do |f| %>
+        <%= f.text_field :search %>
+        <%= f.select :option, options_for_select([["User","user"], ["Book","book"]]) %>
+        <%= f.select :choice, options_for_select([["完全一致","match"], ["前方一致","forward"], ["後方一致","backward"], ["部分一致","partical"]]) %>
+        <%= f.submit 'Search' %>
+      <% end %>
+    </div>
+  </div>
+</div>

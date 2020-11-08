@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2-debug</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/944f4ad3ab.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+  
+  <body>
+    <%= render 'layouts/header' %>
+    
+    <% if user_signed_in? %>
+      <%= render 'search/search' %>
+    <% end %>
+    
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+    </div>
+
+    <%= yield %>
+
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
